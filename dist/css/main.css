@@ -226,3 +226,198 @@ li {
     z-index: 2;
     overflow: hidden;
 }
+
+/* !FOOTER STYLING */
+
+.footer-tag {
+    position: relative; 
+    display: inline-block; 
+    border-radius: 10px;
+    border: 2px solid #000;
+    background: var(--mack-primary-yellow);
+    padding: 5px 10px;
+}
+
+.footer-tag::after {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; 
+    top: 4px; 
+    left: 4px;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0); 
+    border-radius: 8px; 
+    z-index: -1; 
+} 
+
+.footer-tag:hover {
+    background-color: #000000be;
+    border-color: #000000be;
+    color: var(--mack-primary-white);
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* RESPONSIVENESS */
+
+/* Small screens (sm): 640px and up */
+@media (max-width: 640px) {
+    .mack-hero {
+        flex-direction: column;
+    }
+
+    .hero-img {
+        display: none;
+    }
+
+    h1 {
+        font-size: var(--mack-lg-text);
+    }
+    
+    .heading-emphasis {
+        font-family: gelica, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+    }
+    
+    .heading-subtitle {
+        font-size: var(--mack-md-text);
+        font-style: italic;
+    }
+    
+    h2 {
+        color: #000;
+        font-family: Gelica;
+        font-size: var(--mack-xxl-text);
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
+    h3 {
+        color: #000;
+        font-family: Gelica;
+        font-size: var(--mack-lg-text);
+        font-style: italic;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
+    h4 {
+        color: #000;
+        font-family: new-kansas, sans-serif;
+        font-size: var(--mack-base-text);
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+    }
+    
+    h5 {
+        color: #000;
+        font-family: new-kansas, sans-serif;
+        font-size: var(--mack-lg-text);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 6rem;
+    }
+    
+    h6 {
+        color: #000;
+        font-family: new-kansas, sans-serif;
+        font-size: var(--mack-md-text);
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
+    p {
+        color: #000;
+        font-family: new-kansas, sans-serif;
+        font-size: var(--mack-sm-text);
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5em;
+    }
+    
+    article p {
+        font-size: var(--mack-sm-text);
+        font-style: normal;
+        font-weight: 400;
+        line-height: 1.5em;
+        margin: 1.5rem 0;
+    }
+    
+    .descriptive-tag {
+        font-family: new-kansas, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: var(--mack-xs-text);
+        color: var(--mack-primary-white);
+    
+    }
+    
+    .context span {
+        font-size: var(--mack-sm-text);
+        color: #000;
+        font-family: new-kansas, sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 1.5em;
+    }
+    
+    .nav-links {
+        color: #000;
+        font-family: Gelica;
+        font-size: var(--mack-base-text);
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+    
+    .nav-links a {
+        margin: .5rem;
+    }
+    
+    .nav-links a:hover {
+        color: var(--mack-primary-blue);
+        font-style: italic;
+    }
+    
+    .footer-links {
+        color: #000;
+        font-family: Gelica;
+        font-size: var(--mack-xs-text);
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+    }
+
+    .case-study-heading {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: start; 
+        gap: 2rem; 
+    }
+
+    .full-width {
+        width: 100vw; 
+        margin-left: calc(-1 * var(--body-margin, 3rem));
+        margin-right: calc(-1 * var(--body-margin, 3rem));
+    }
+
+    .context {
+        display: grid;
+        grid-template-columns: auto auto auto; /* Adjusts column widths */
+        column-gap: 0.5rem; /* Adjust as needed */
+        padding: 0; /* Make sure there is no unwanted padding in the container */
+        margin: 0; /* Ensure no margins are affecting the layout */
+    }
+    .case-study-side-image {
+        display: flex;
+        flex-direction: column; /* Stack the image and text */
+        align-items: center; /* Center the image and text vertically */
+        gap: 20px; /* Spacing between text and image */
+        margin: 20px 0;
+    }
+
+    
+}

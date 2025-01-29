@@ -3,7 +3,7 @@
 function kismet_styles(){
     wp_enqueue_style(
         'tailwind-css',
-        'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+        'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css'
     );
 
     wp_enqueue_style(
@@ -25,7 +25,7 @@ function kismet_styles(){
 
     wp_enqueue_style(
         'material-symbols',
-        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet'
+        'https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined'
     );
 
 }
@@ -47,4 +47,5 @@ function kismet_scripts(){
     );
 }
 
-add_action('kismet_styles', 'kismet_scripts');
+add_action('wp_enqueue_scripts', 'kismet_styles');
+add_action('wp_enqueue_scripts', 'kismet_scripts');
