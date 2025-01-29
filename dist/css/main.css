@@ -1,0 +1,228 @@
+/* !NOTES FOR MAINTENANCE */
+
+/* Items with a class of (blank)-tag are the comic-style pop-ups. So, they have the main BG and then the pseudo element that serves as the shadoow. This is not inclusive of images.  */
+
+/* All text styling and responsive text styling is handled in pure CSS not Tailwind CSS. */
+
+
+
+/* GENERAL STYLING */
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+:root {
+    /* !TEXT SCALE */
+    --mack-xs-text: clamp(0.87rem, 0.22vi + 0.78rem, 1rem);
+    --mack-sm-text: clamp(1.09rem, 0.28vi + 1.02rem, 1.25rem);
+    --mack-base-text: clamp(1.37rem, 0.36vi + 1.28rem, 1.56rem);
+    --mack-md-text: clamp(1.71rem, 0.44vi + 1.6rem, 1.95rem);
+    --mack-lg-text: clamp(2.14rem, 0.55vi + 2rem, 2.44rem);
+    --mack-lg-xl-text: clamp(2.4rem, 0.62vi + 2.25rem, 2.75rem);
+    --mack-xl-text: clamp(2.67rem, 0.69vi + 2.5rem, 3.05rem);
+    --mack-xxl-text: clamp(3.34rem, 0.87vi + 3.12rem, 3.81rem);
+    --mack-xxxl-text: clamp(4.17rem, 1.08vi + 3.9rem, 4.77rem);
+
+    /* !COLOR SCALE */
+    --mack-bg: linear-gradient(to bottom, #FFF7EC, #E7DFD2);
+    --mack-primary-blue: #4695D7;
+    --mack-primary-yellow: #FFB900;
+    --mack-primary-black: #000000;
+    --mack-primary-white: #FFFFFF;
+    --mack-accent-one-blue: #96ACFF;
+    --mack-accent-two-blue: #B1CDFF;
+    --mack-accent-green: #A2D1B1;
+    --mack-accent-gray: #555;
+}
+
+
+body {
+    background: var(--mack-bg);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    max-width: 1400px;
+}
+
+button {
+    font-family: new-kansas, sans-serif;
+    font-size: var(--mack-base-text);
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    color: var(--mack-primary-blue);
+    cursor: pointer;
+    margin: .5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    color: var(--mack-accent-one-blue);
+    font-style: italic;
+}
+
+
+/* TEXT STYLING */
+
+h1 {
+    font-family: gelica, sans-serif;
+    font-weight: 400;
+    font-size: var(--mack-lg-xl-text);
+}
+
+.heading-emphasis {
+    font-family: gelica, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.heading-subtitle {
+    font-size: var(--mack-md-text);
+    font-style: italic;
+    padding: 4rem 0 0 0;
+}
+
+h2 {
+    color: var(--mack-primary-black);
+    font-family: Gelica;
+    font-size: var(--mack-xxl-text);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+h3 {    
+    color: var(--mack-primary-black);
+    font-family: Gelica;
+    font-size: var(--mack-lg-xl-text);
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+}
+
+h4 {
+    color: var(--mack-primary-black);
+    font-family: new-kansas, sans-serif;
+    font-size: var(--mack-base-text);
+    font-style: normal;
+    font-weight: 600;
+    line-height: 2.5rem;
+}
+
+h5 {
+    color: var(--mack-primary-black);
+    font-family: new-kansas, sans-serif;
+    font-size: var(--mack-lg-text);
+    font-style: normal;
+    font-weight: 500;
+    margin: 1.5rem 0;
+}
+
+h6 {
+    color: var(--mack-primary-black);
+    font-family: new-kansas, sans-serif;
+    font-size: var(--mack-base-text);
+    font-style: italic;
+    font-weight: 500;
+    line-height: normal;
+    margin: 1.5rem 0;
+}
+
+p {
+    color: var(--mack-primary-black);
+    font-family: new-kansas, sans-serif;
+    font-size: var(--mack-sm-text);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+article p, li {
+    font-size: var(--mack-sm-text);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin: 1.5rem 0;
+}
+
+li {
+    color: var(--mack-primary-black);
+    font-family: new-kansas, sans-serif;
+    font-size: var(--mack-sm-text);
+    font-style: normal;
+    font-weight: 500;
+    margin-left: 2rem;
+    list-style: disc;
+}
+
+.footer-credits p {
+    color: var(--mack-accent-gray);
+    font-size: var(--mack-xs-text);
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.5em;
+    margin: 1.5rem 0;
+}
+
+.descriptive-tag {
+    font-family: new-kansas, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: var(--mack-xs-text);
+    color: var(--mack-primary-white);
+
+}
+
+.context span {
+    font-size: var(--mack-sm-text);
+    color: #000;
+    font-family: new-kansas, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.speech-bubble span {
+    font-family: Gelica;
+    font-size: var(--mack-base-text);
+    font-style: normal;
+    font-weight: 400;
+}
+
+.nav-links {
+    color: #000;
+    font-family: Gelica;
+    font-size: var(--mack-base-text);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.nav-links a {
+    margin: .5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--mack-primary-blue);
+    font-style: italic;
+}
+
+.footer-links {
+    color: #000;
+    font-family: Gelica;
+    font-size: var(--mack-sm-text);
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+/* NAV STYLING */
+
+#overlay {
+    background: var(--mack-bg);
+    z-index: 2;
+    overflow: hidden;
+}
