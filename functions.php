@@ -49,3 +49,4 @@ function kismet_scripts(){
 
 add_action('wp_enqueue_scripts', 'kismet_styles');
 add_action('wp_enqueue_scripts', 'kismet_scripts');
+add_theme_support('post-thumbnails');

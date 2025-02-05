@@ -139,7 +139,7 @@ p {
     line-height: 1.5em;
 }
 
-article p, li {
+.post-container p, li {
     font-size: var(--mack-sm-text);
     font-style: normal;
     font-weight: 400;
@@ -219,12 +219,88 @@ li {
     line-height: normal;
 }
 
+/* !ARTICLE TEXT */
+
+.post-title {
+    font-family: gelica, sans-serif !important;
+    font-size: var(--mack-xxl-text) !important;
+    font-weight: 500 !important;
+    color: var(--mack-primary-black) !important;
+    margin-bottom: 1rem !important;
+}
+
+.post-container h1,
+.post-container h2,
+.post-container h3,
+.post-container h4,
+.post-container h5,
+.post-container h6 {
+    color: var(--mack-primary-black);
+    font-family: new-kansas, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    margin: 1.5rem 0;
+}
+
+.post-container h1 { font-size: var(--mack-lg-text); }
+.post-container h2 { font-size: var(--mack-md-text); }
+.post-container h3 { font-size: var(--mack-base-text); }
+.post-container h4 { font-size: var(--mack-sm-text); }
+.post-container h5 { font-size: var(--mack-xs-text); }
+.post-container h6 { font-size: var(--mack-xs-text);}
+
+
 /* NAV STYLING */
 
 #overlay {
     background: var(--mack-bg);
     z-index: 2;
     overflow: hidden;
+}
+
+/* !SINGLE STYLING */
+
+.descriptive-tag {  
+    background-color: var(--mack-primary-black);
+    border-radius: 5px;
+} 
+
+.case-study-heading {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: start; 
+    gap: 2rem; 
+}
+
+.context {
+    display: grid;
+    grid-template-rows: auto auto;
+    row-gap: .5rem;
+}
+
+.context-tag {
+    position: relative; 
+    display: inline-block; 
+    background-color: #ae81f1; 
+    border: 1px solid #000;
+    border-radius: 8px; 
+}
+
+.context-tag::after {
+    content: "";
+    position: absolute; 
+    top: 4px; 
+    left: 4px; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0, 0, 0); 
+    border-radius: 8px; 
+    z-index: -1; 
+} 
+
+.context-apps img {
+    object-fit: cover;
+    border-radius: 8px; 
 }
 
 /* !FOOTER STYLING */
@@ -418,6 +494,5 @@ li {
         gap: 20px; /* Spacing between text and image */
         margin: 20px 0;
     }
-
     
 }
