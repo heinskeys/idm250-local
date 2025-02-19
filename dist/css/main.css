@@ -63,6 +63,25 @@ button:hover {
     font-style: italic;
 }
 
+.main-button {
+    background-color: var(--mack-primary-black);
+    border-radius: 5px;
+    padding: 10px 25px;
+
+    color: var(--mack-primary-white);
+    font-family: gelica, sans-serif;
+    font-size: var(--mack-xs-text);
+    font-style: normal;
+    font-weight: 400;
+
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.main-button:hover {
+    background-color: var(--mack-accent-gray);
+    font-style: italic;
+}
+
 
 /* TEXT STYLING */
 
@@ -81,7 +100,6 @@ h1 {
 .heading-subtitle {
     font-size: var(--mack-md-text);
     font-style: italic;
-    padding: 4rem 0 0 0;
 }
 
 h2 {
@@ -139,7 +157,7 @@ p {
     line-height: 1.5em;
 }
 
-.post-container p, li {
+.post-content p, li {
     font-size: var(--mack-sm-text);
     font-style: normal;
     font-weight: 400;
@@ -219,6 +237,19 @@ li {
     line-height: normal;
 }
 
+.wp-element-caption {
+    color: var(--mack-accent-gray);
+    font-family: new-kansas, sans-serif;
+    font-size: var(--mack-sm-text);
+    font-style: italic;
+    text-align: center;
+}
+
+
+hr {
+    background-color: var(--mack-primary-black);
+}
+
 /* !ARTICLE TEXT */
 
 .post-title {
@@ -259,6 +290,111 @@ li {
 }
 
 /* !SINGLE STYLING */
+
+blockquote {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid #000;
+    background: #FFB900;
+    padding: .5rem;
+    margin: 1.5rem;
+}
+
+blockquote p {
+    font-size: var(--mack-md-text) !important;
+    font-weight: 600 !important;
+}
+
+
+
+
+.case-study-image {
+    border-radius: 10px;
+}
+
+/* Mack! has a default margin on the sides of 6rem on LG screens, however, in order to maintain full width images but margined text, we apply manually ONLY with case studies. */
+
+.default-width {
+    margin: 0 6rem;
+}
+
+.full-width {
+    width: 100vw;
+    margin-left: -50vw;
+    left: 50%;
+    position: relative;
+}
+
+.case-study-image img {
+    width: 100vw;
+    height: 650px;
+    object-fit: cover; 
+}
+
+
+.section-graphic {
+    height: 500px;
+    background-color: #000000;
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertically center image */
+    justify-content: center; /* Horizontally center image */
+    overflow: hidden; /* Prevent overflow issues */
+}
+
+.section-graphic img {
+    width: auto; /* Keep the image's aspect ratio */
+    height: 80%; /* Scale to fill the height of the section */
+    object-fit: contain; /* Contain image within the section */
+    border-radius: 10px;
+}
+
+.heading-graphic img { 
+    width: auto;
+    height: 75px;
+}
+
+.supplemental-graphic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.supplemental-large img {
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.supplemental-small img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.supplemental-graphic > div {
+    position: relative;
+    width: 100%;
+    max-width: 900px; /* Optional: restricts video width */
+    padding-top: 56.25%; /* Maintains 16:9 aspect ratio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.supplemental-graphic iframe, .supplemental-graphic video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Optional, depending on your styling preferences */
+}
 
 .descriptive-tag {  
     background-color: var(--mack-primary-black);
@@ -333,7 +469,70 @@ li {
     transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
-/* RESPONSIVENESS */
+
+/* ! ABOUT/PAGE.PHP */
+
+.about-image {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.about-dropshadow {
+    position: absolute;
+    top: 12px;
+    right: 1rem;
+    width: 90%;
+    height: 100%;
+    background-color: #000;
+    border-radius: 15px;
+    z-index: 0;
+    align-items: center;
+}
+
+.about-image img {
+    position: relative;
+    object-fit: cover;
+    width: 90%;
+    height: 100%;
+    border-radius: 15px;
+    border: 2px solid #000;
+    z-index: 1;
+    align-items: center;
+}
+
+.about-image .speech-bubble {
+    position: absolute;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 10px;
+    border: 2px solid #000;
+    padding: 5px 15px;
+    z-index: 2;
+}
+
+
+.about-bubble-top {
+    top: 15%; /* Adjust top position */
+    left: 85%;
+    background: var(--mack-accent-two-blue);
+}
+
+.about-bubble-middle {
+    bottom: 40%;
+    left:-10%;
+    background: var(--mack-accent-green);
+}
+
+.about-bubble-bottom {
+    bottom: 5%;
+    right: -2%;
+    background: var(--mack-accent-two-blue);
+}
+
+/* ! RESPONSIVENESS */
 
 /* Small screens (sm): 640px and up */
 @media (max-width: 640px) {
@@ -476,8 +675,8 @@ li {
 
     .full-width {
         width: 100vw; 
-        margin-left: calc(-1 * var(--body-margin, 3rem));
-        margin-right: calc(-1 * var(--body-margin, 3rem));
+        padding-left: calc(-1 * var(--body-margin, 3rem));
+        padding-right: calc(-1 * var(--body-margin, 3rem));
     }
 
     .context {
@@ -494,5 +693,15 @@ li {
         gap: 20px; /* Spacing between text and image */
         margin: 20px 0;
     }
+
     
+}
+
+  /* 2XL screens (2xl): 1536px and up */
+@media (min-width: 1536px) {
+    .case-study-image img {
+        width: 100vw;
+        height: 800px;
+        object-fit: cover; 
+    }
 }
