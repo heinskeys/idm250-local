@@ -343,14 +343,15 @@ function register_customizer_settings($wp_customize) {
     )));
 }
 
-add_action('customize_register', 'register_customizer_settings');
-
-
-
-
-// Hook the function into WordPress
-add_filter('the_content', 'custom_video_classes_in_content');
-
+function create_cs_post_type() {
+    $args = array(
+        'public' => true,
+        'label'  => 'CS',
+        'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
+        'rewrite' => array('slug' => 'cs'),
+    );
+    register_post_type('cs', $args);
+}
 
 
 
@@ -362,3 +363,6 @@ add_theme_support('post-thumbnails');
 add_action('after_setup_theme', 'kismet_register_menus');
 add_action('customize_register', 'kismet_customize_register');
 add_filter('body_class', 'kismet_body_class');
+add_filter('the_content', 'custom_video_classes_in_content');
+add_action('customize_register', 'register_customizer_settings');
+add_action('init', 'create_cs_post_type');
