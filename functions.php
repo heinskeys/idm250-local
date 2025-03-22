@@ -273,6 +273,81 @@ function custom_video_classes_in_content($content) {
     return $content;
 }
 
+function register_customizer_settings($wp_customize) {
+    // Add a section for the hero section
+    $wp_customize->add_section('hero_section', array(
+        'title'       => __('Hero Section', 'idm250-local'),
+        'priority'    => 30,
+    ));
+
+    // Add setting for Mack's Name
+    $wp_customize->add_setting('mack_name', array(
+        'default' => 'Your Name',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('mack_name', array(
+        'label'    => __('Mack\'s Name', 'idm250-local'),
+        'section'  => 'hero_section',
+        'type'     => 'text',
+    ));
+
+    // Add setting for Mack's Interest
+    $wp_customize->add_setting('mack_interest', array(
+        'default' => 'Your Area of Interest',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('mack_interest', array(
+        'label'    => __('Mack\'s Interest', 'idm250-local'),
+        'section'  => 'hero_section',
+        'type'     => 'text',
+    ));
+
+    // Add setting for Hero Text
+    $wp_customize->add_setting('hero_intro_text', array(
+        'default' => 'Hi, I’m [mack_name], a third-year UX student interested in [mack_interest].',
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control('hero_intro_text', array(
+        'label'    => __('Hero Intro Text', 'idm250-local'),
+        'section'  => 'hero_section',
+        'type'     => 'textarea',
+    ));
+
+    // Add the setting for the subtitle
+    $wp_customize->add_setting('hero_subtitle', array(
+        'default'   => 'View my work below!', // Default subtitle
+        'transport' => 'refresh', // Refresh the page when updated
+    ));
+
+    // Add the control to change the subtitle
+    $wp_customize->add_control('hero_subtitle_control', array(
+        'label'    => __('Hero Subtitle', 'your_theme_textdomain'),
+        'section'  => 'hero_section',
+        'settings' => 'hero_subtitle',
+        'type'     => 'text',
+    ));
+
+    // Add setting for Hero Image
+    $wp_customize->add_setting('hero_image', array(
+        'default' => get_template_directory_uri() . '/assets/images/default-hero.jpg', // Set default image
+        'transport' => 'refresh',
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Image_Control($wp_customize, 'hero_image', array(
+        'label'    => __('Hero Image', 'idm250-local'),
+        'section'  => 'hero_section',
+        'settings' => 'hero_image',
+    )));
+}
+
+add_action('customize_register', 'register_customizer_settings');
+
+
+
+
 // Hook the function into WordPress
 add_filter('the_content', 'custom_video_classes_in_content');
 

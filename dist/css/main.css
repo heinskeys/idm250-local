@@ -289,6 +289,187 @@ hr {
     overflow: hidden;
 }
 
+/* !HERO STYLING */
+
+.mack-hero {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin: 8px 0;
+    gap: 72px;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-img {
+    width: 85%;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-img img {
+    z-index: 1;
+}
+
+.heading-tag-mack {
+    position: relative; /* Allows for pseudo-element positioning */
+    display: inline-block; /* Shrink-wraps content */
+    border-radius: 15px;
+    border: 2px solid #000;
+    background: var(--mack-primary-yellow);
+    padding: 0px 10px;
+}
+
+.heading-tag-mack::after {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; /* Positioned relative to .role-tag */
+    top: 6px; /* Offset shadow downward */
+    left: 6px; /* Offset shadow to the right */
+    width: 100%; /* Same width as the parent */
+    height: 100%; /* Same height as the parent */
+    background-color: rgba(0, 0, 0); /* Dark shadow color */
+    border-radius: 15px; /* Match parent border-radius */
+    z-index: -1; /* Places the shadow behind the element */
+} 
+
+.heading-tag-visual {
+    position: relative; /* Allows for pseudo-element positioning */
+    display: inline-block; /* Shrink-wraps content */
+    border-radius: 15px;
+    border: 2px solid #000;
+    background: var(--mack-primary-blue);
+    padding: 0px 10px;
+}
+
+.heading-tag-visual::after {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute; /* Positioned relative to .role-tag */
+    top: 6px; /* Offset shadow downward */
+    left: 6px; /* Offset shadow to the right */
+    width: 100%; /* Same width as the parent */
+    height: 100%; /* Same height as the parent */
+    background-color: rgba(0, 0, 0); /* Dark shadow color */
+    border-radius: 15px; /* Match parent border-radius */
+    z-index: -1; /* Places the shadow behind the element */
+} 
+
+hr {
+    background-color: var(--mack-primary-black);
+}
+
+.speech-bubble {
+    position: absolute;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 10px;
+    border: 2px solid #000;
+    padding: 5px 15px;
+}
+
+
+.hero-bubble-top {
+    top: 80px;
+    left: 180px;
+    background: var(--mack-accent-one-blue);
+}
+
+.hero-bubble-bottom {
+    bottom: 90px;
+    right: 50%;
+    background: var(--mack-accent-two-blue);
+}
+
+/* !CARD STYLING */
+
+.card-image {
+    position: relative;
+    transition: transform 0.3s ease; 
+    width: 100%;
+}
+
+
+.card-image:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+}
+
+.card-image {
+    display: inline-block;
+    transition: transform 0.2s ease; /* Smooth shrinking and growing */
+}
+
+.card-image:active {
+    transform: scale(1); /* Shrinks the card on press */
+}
+
+
+.card-dropshadow {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 95%;
+    height: 95%;
+    background-color: #000;
+    border-radius: 15px;
+    z-index: 0;
+}
+
+.card-image img {
+    position: relative;
+    object-fit: cover;
+    width: 95%;
+    height: 95%;
+    border-radius: 15px;
+    border: 2px solid #000;
+    z-index: 1;
+}
+
+/* Mostly handled via Tailwind CSS */
+
+.descriptive-tag {  
+    background-color: var(--mack-primary-black);
+    border-radius: 5px;
+} 
+
+.case-study-card-tags img:hover {
+    animation: 1s rotate infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(-5deg);
+    }
+
+    75% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.case-study-card-content h4 {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.case-study-card-content h4:hover {
+    cursor: pointer;
+    color: var(--mack-primary-blue);
+    text-decoration: underline dotted;
+}
+
 /* !SINGLE STYLING */
 
 blockquote {
