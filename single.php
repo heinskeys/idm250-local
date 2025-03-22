@@ -19,6 +19,8 @@
             </div>
             
             <?php get_template_part('template-parts/post-meta'); ?>
+            <hr class="line-break h-0.5 w-auto">
+            
             
             <div class="post-content">
                 <?php the_content(); ?>
