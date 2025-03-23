@@ -2,8 +2,8 @@
 <section class="case-studies grid grid-cols-1 gap-10 my-20 justify-between lg:grid-cols-2">
     <?php 
     $args = array(
-        'post_type'      => 'post',  // Change to your custom post type if needed
-        'posts_per_page' => 4,       // Adjust as necessary
+        'post_type'      => 'post', 
+        'posts_per_page' => 4,      
     );
     $query = new WP_Query($args);
     
